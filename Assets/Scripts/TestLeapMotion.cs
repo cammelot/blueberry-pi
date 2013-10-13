@@ -18,7 +18,7 @@ public class TestLeapMotion : MonoBehaviour {
         Debug.Log(hand.PalmPosition.ToString());
 
         Leap.Vector newPos = hand.PalmPosition;
-        transform.position = new Vector3(newPos.x * 0.05f, newPos.y * 0.05f - 10.0f);
+		transform.position = new Vector3(newPos.x * 0.05f, newPos.y*0.05f - 10.0f);
 
         float Pitch = hand.PalmNormal.Pitch + Mathf.Deg2Rad*90;
         float Roll = hand.PalmNormal.Roll;

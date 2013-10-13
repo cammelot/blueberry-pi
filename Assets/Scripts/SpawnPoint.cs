@@ -3,12 +3,13 @@ using System.Collections;
 
 public class SpawnPoint : MonoBehaviour {
 	public GameObject debri;
-	public float min = 0.3f;
-	public float max = 1f;
+	public float min = 0.01f;
+	public float max = 0.05f;
 	
 	// Use this for initialization
 	void Start () {
 		StartCoroutine("SpawnDebris");
+		
 	}
 	
 	IEnumerator SpawnDebris(){

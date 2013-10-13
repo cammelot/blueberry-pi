@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Player : MonoBehaviour {
-
+	
 	// Use this for initialization
 	void Start () {
 	
@@ -13,14 +13,4 @@ public class Player : MonoBehaviour {
 	
 	}
 	
-	void OnTriggerEnter(Collider otherCollider)
-	{
-		
-		/*if (otherCollider.GetComponent<ObstacleBase>())
-			Destroy(gameObject);*/
-
-		if (otherCollider.GetComponent<ItemBase>())
-			Destroy(otherCollider.gameObject);
-		
-	}
 }
