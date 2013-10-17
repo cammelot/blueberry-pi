@@ -7,7 +7,7 @@ public class ObstacleBase : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		//count = GameObject.Find("BrokenCount").GetComponent<CollisionCount>;
 	}
 	
 	// Update is called once per frame
@@ -22,6 +22,8 @@ public class ObstacleBase : MonoBehaviour {
 		{
 			Instantiate(brokenObstaclesPrefab, transform.position, brokenObstaclesPrefab.transform.rotation);
 			Destroy(gameObject);
+			
+			
 		}	
 	}
 }
