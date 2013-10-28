@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Timer : MonoBehaviour {
 	
-	public int timeLimit = 60;
+	public int timeLimit = 10;
 	
 	private float timeRemaining;
 	
@@ -13,6 +13,7 @@ public class Timer : MonoBehaviour {
 	void Start () {
 		
 		ResetTimer();
+		timerStarted = true;//나중에 StartTimer()사용하고 지우기
 	
 	}
 	
