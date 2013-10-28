@@ -4,6 +4,7 @@ using System.Collections;
 public class ObstacleBase : MonoBehaviour {
 	
 	public GameObject brokenObstaclesPrefab;
+	public static bool brokenObstacle;
 
 	// Use this for initialization
 	void Start () {
@@ -22,8 +23,14 @@ public class ObstacleBase : MonoBehaviour {
 		{
 			Instantiate(brokenObstaclesPrefab, transform.position, brokenObstaclesPrefab.transform.rotation);
 			Destroy(gameObject);
+			CollisionCount.count++;
 			
-			
+			//brokenObstacle = true;			
 		}	
+		/*
+		else{
+			brokenObstacle = false;
+		}
+		*/
 	}
 }

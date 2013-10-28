@@ -3,21 +3,29 @@ using System.Collections;
 
 public class CollisionCount : MonoBehaviour {
 	
-	private int count;
+	public static int count;
 	
 	void Start(){
-		
+		/*
+		GameObject go = GameObject.FindObjectOfType(typeof(ObstacleBase))as GameObject;	
+		ObstacleBase broken = go.Getcomponent*/
 	}
 	
 	void Init(){
-		this.count = 0;
+		
+		//count = GameObject.Find("BrokenCount").GetComponent<CollisionCount>;
+		CollisionCount.count = 0;
 	}
 	
 	void Count(){
-		this.count += count;
+		Debug.Log("call");
+		CollisionCount.count++;
 	}
 	
 	void Update () {
-		guiText.text = "Collision : "+this.count;
+		/*if(ObstacleBase.brokenObstacle){
+			Count();
+		}*/
+		guiText.text = "Collision : "+CollisionCount.count;
 	}
 }
