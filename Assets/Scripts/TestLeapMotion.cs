@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class TestLeapMotion : MonoBehaviour {
-
+    static int id = 0;
 	// Use this for initialization
 	void Start () {
         LeapInput.HandUpdated += HandUpdatedHandler;
@@ -15,7 +15,7 @@ public class TestLeapMotion : MonoBehaviour {
 
     void HandUpdatedHandler(Leap.Hand hand)
     {
-        Debug.Log(hand.PalmPosition.ToString());
+
 
         Leap.Vector newPos = hand.PalmPosition;
 		transform.position = new Vector3(newPos.x * 0.05f, newPos.y*0.05f - 10.0f);
@@ -23,7 +23,6 @@ public class TestLeapMotion : MonoBehaviour {
         float Pitch = hand.PalmNormal.Pitch + Mathf.Deg2Rad*90;
         float Roll = hand.PalmNormal.Roll;
 
-        Debug.Log(Pitch.ToString());
         Pitch = Mathf.Clamp(Pitch, -45 * Mathf.Deg2Rad, 45 * Mathf.Deg2Rad);
 
         transform.rotation = new Quaternion(-Pitch, 0, Roll, 1);
